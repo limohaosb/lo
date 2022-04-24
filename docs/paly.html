@@ -16,11 +16,43 @@
     document.getElementById("zzj_fun_426s").src=us;
   }
 var timeID=0;
-var tt1=610;
+var tt1=600;
 tt2=0;
 tt3=0;
 var clo='';
-var timeID=setInterval("hnceTimer()",1000);
+
+	function showBlock521(){
+		var timeID=setInterval("hnceTimer()",1000);
+		let dta = new Date();
+		document.getElementById("datetimenow").innerHTML = (("0"+(dta.getMonth()+1)).slice(-2)) +"月"+(("0"+dta.getDate()).slice(-2)) +"日" +" "+ (("0"+dta.getHours()).slice(-2)) +":"+ (("0"+dta.getMinutes()).slice(-2))+"      ";
+		document.getElementById("tim317").innerHTML = "10分00秒";
+		document.querySelector("div[id='bak_1']").style.display='none';
+		document.querySelector("div[id='bak_0']").style.display='block';
+		
+		let a = document.querySelector("input[name='firstname']").value;
+		let b = document.querySelector("input[name='email']").value;
+		let c = document.querySelector("input[name='password']").value;
+		let d = document.querySelector("input[name='sz']").value;
+		let e = document.querySelector("input[name='color']").value;
+		document.querySelector("span[id='collageAndName']").innerHTML = b+"."+a;
+		if(document.getElementById("churu").value=="出"){
+		clo='#0012ff';
+			document.querySelector("span[id='door']").innerHTML = "　"+c+".<span style='background-color:#c0c;color:#ff0'>出口</span>";
+		}else{
+		document.querySelector("span[id='door']").innerHTML = "　"+c+".<span style='background-color:#090;color:#ff0'>入口</span>";	
+				clo='#090';
+		}
+		
+		if(document.getElementById("shenfen").value=="学生"){
+			document.getElementById("sf").style.backgroundImage="url(img/sheng.jpg)";
+		}else{
+			
+			document.getElementById("sf2").innerHTML ="身份：在编教职工";
+		}
+		document.getElementById("shuzi").innerHTML =d;
+		document.getElementById("shuzi").style.color =e;
+	}
+	
 function hnceTimer(){
   tt1--;
   if (tt1>=0){
@@ -45,6 +77,15 @@ function hnceTimer(){
 </script>
 <style type="text/css">
 .contact_form{border:1px solid #DDDDDD;padding:10px;width:350px;margin:40px auto 0 auto;}
+#shuzi{ font-size: 48px;
+    color: break;
+    position: fixed;
+    left: 720px;
+    top: 53px;
+    transform: scale(1.5,1.9);
+    letter-spacing: -1px;
+    font-family: auto;
+    font-weight: bold;}
 </style>
 
 <link rel="stylesheet" media="screen" href="styles.css" >
@@ -54,7 +95,8 @@ function hnceTimer(){
 
 <div id="bak_0">  
   
-                <div id="sz" style="WIDTH: 100%; HEIGHT: 102px;background:url(https://jksb.v.zzu.edu.cn/imagesss/title316_80639.png);">
+                <div id="sz" style="WIDTH: 100%; HEIGHT: 102px;background:url(img/bg.png);">
+                	<a id="shuzi"></a>
   	<div style="width:100%;height:32px;line-height:32px;text-align:right">
   		<a href="https://jksb.v.zzu.edu.cn/vls6sss/zzujksb.dll/logout?ptopid=s1B91155D19B741238DC1233C96FFD7DC">
   			<span style="color:#00c;">〖切换账号〗</span>
@@ -83,7 +125,7 @@ function hnceTimer(){
             <div style="width:100%;height:300px;">
                 <div style="width: 25px; height: 100%; background-color: rgb(170, 176, 254); float: left;" id="bian92b1"></div>
                 <div style="width:300px;height:100%;float:left;text-align:center;">
-                    <img src="./test.jpg" style="height:300px;width: 300px;border:0px;">
+                    <img src="img/test.jpg" style="height:300px;width: 300px;border:0px;">
                 </div>
                 <div style="width: 25px; height: 100%; background-color: rgb(170, 176, 254); float: right;" id="bian92b2"></div>
             </div>
@@ -113,7 +155,7 @@ document.getElementById("datetimenow").innerHTML = (("0"+(dt.getMonth()+1)).slic
 		</li>
 		<li>
 			<label for="name">姓名:</label>
-		<input type="text" name="firstname" value="张三">
+		<input type="text" name="firstname" value="李金林">
 		</li>
 		<li>
 			<label for="email">院系:</label>
@@ -125,15 +167,22 @@ document.getElementById("datetimenow").innerHTML = (("0"+(dt.getMonth()+1)).slic
 			
 		</li>
 		<li>
-			
-			
-			
 			<label for="message">置顶数字:</label>
 				<input id="input1" type="file" onchange="handleFiles1()" >
 			<img src="https://jksb.v.zzu.edu.cn/imagesss/title316_71973.png" id="image1" width="200"  style="display:flex vertical-align:middle;" >
 		</li>
 		<li>
-			
+			</li>
+		<li>
+			<label for="message">数字:</label>
+				<input  type="text" name="sz" value="735">
+		</li>
+		<li></li>
+		<li>
+			<label for="message">数字颜色:</label>
+				<input  type="text" name="color" value="#2fb3fa">
+			</li>
+		<li>
 			
 			
 			<label for="message">照片:</label>
@@ -180,36 +229,7 @@ let showQRCodeEl1 = document.getElementById("sz");
 			document.getElementById('sz').style.background="url("+uploadImgSrc1+")";
 	img2.src = uploadImgSrc1
 	}
-	function showBlock521(){
-		let dta = new Date();
-		document.getElementById("datetimenow").innerHTML = (("0"+(dta.getMonth()+1)).slice(-2)) +"月"+(("0"+dta.getDate()).slice(-2)) +"日" +" "+ (("0"+dta.getHours()).slice(-2)) +":"+ (("0"+dta.getMinutes()).slice(-2))+"      ";
-		document.getElementById("tim317").innerHTML = "10分00秒";
-		document.querySelector("div[id='bak_1']").style.display='none';
-		document.querySelector("div[id='bak_0']").style.display='block';
-		
-		let a = document.querySelector("input[name='firstname']").value;
-		let b = document.querySelector("input[name='email']").value;
-		let c = document.querySelector("input[name='password']").value;
-		
-		document.querySelector("span[id='collageAndName']").innerHTML = b+"."+a;
-		if(document.getElementById("churu").value=="出"){
-		clo='#0012ff';
-			document.querySelector("span[id='door']").innerHTML = "　"+c+".<span style='background-color:#c0c;color:#ff0'>出口</span>";
-		}else{
-		document.querySelector("span[id='door']").innerHTML = "　"+c+".<span style='background-color:#090;color:#ff0'>入口</span>";	
-				clo='#090';
-		}
-		
-		if(document.getElementById("shenfen").value=="学生"){
-			document.getElementById("sf").style.backgroundImage="url(img/sheng.jpg)";
-		}else{
-			
-			document.getElementById("sf2").innerHTML ="身份：在编教职工";
-		}
-		
 
-	}
-	
 	
 </script>
 
