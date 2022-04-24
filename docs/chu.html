@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <title>健康平台学生请假系统</title>
+
+    <meta name="renderer" content="webkit" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <link href="https://door.v.zzu.edu.cn/qj/public/lib/axui-v1.0.2/css/ax.css" rel="stylesheet" />
+    <script src="https://door.v.zzu.edu.cn/qj/public/lib/jquery/jquery-3.0.0.min.js"></script>
+    <script src="https://door.v.zzu.edu.cn/qj/public/lib/axui-v1.0.2/js/ax.min.js"></script>
+    <link href="https://door.v.zzu.edu.cn/qj/public/lib/layui/src/css/layui.style.css" rel="stylesheet" />
+    <link href="https://door.v.zzu.edu.cn/qj/public/lib/layui/src/css/layui.css" rel="stylesheet" />
+    <script src="https://door.v.zzu.edu.cn/qj/public/lib/commonJS.js"></script>
+    <script src="https://door.v.zzu.edu.cn/qj/public/lib/respond.min.js"></script>
+    <script src="https://door.v.zzu.edu.cn/qj/public/lib/framework-ui.js"></script>
+    
+    <script src="https://door.v.zzu.edu.cn/qj/public/lib/weui/zepto.min.js"></script>
+    <link href="https://door.v.zzu.edu.cn/qj/public/lib/weui/weui.min.css" rel="stylesheet" />
+    <script src="https://door.v.zzu.edu.cn/qj/public/lib/weui/jweixin-1.0.0.js"></script>
+
+
+</head>
+<body ontouchstart="" onmouseover="">
+    <div class="layui-header header header-index">
+        <div class="layui-container">
+            <a class="layui-logo" href="https://jksb.v.zzu.edu.cn">
+                <img src="/qj/Content/images/logo.png" />
+            </a>
+        </div>
+    </div>
+
+    <div class="layui-layout-body">
+        <div class="layui-container">
+            
+<div style="padding-bottom:15px">
+
+    <div class="layui-form" style="border-bottom:1px solid #ddd ;padding:10px;">
+        <div style="float:left;">
+                <a href="/qj/?ptopid=sCA395DA8A52C454391B9F3A2B611D272&amp;ruid=165078892971501" class="layui-icon layui-icon-prev" style="font-size:22px;color:#333;"></a>
+        </div>
+        <div style="font-size:18px;text-align:center">请假条详情</div>
+    </div>
+</div>
+<form class="layui-form" action="" id="jtform">
+    <div class="layui-form-item">
+        <div class="layui-inline">
+            <label class="layui-form-label">账号</label>
+            <div class="layui-input-block">
+                <input type="text" name="stuNo" lay-verify="title" value="202022074011618" placeholder="请输入标题" class="layui-input">
+                <input type="hidden" name="lsNo" lay-verify="title" value="10282818" placeholder="请输入标题" class="layui-input">
+            </div>
+        </div>
+        <div class="layui-inline">
+            <label class="layui-form-label">姓名</label>
+            <div class="layui-input-block">
+                <input type="text" disabled name="stuName" lay-verify="required" value="于娇娇" class="layui-input" />
+                <input type="hidden" disabled id="lsNo" value="10282818" class="layui-input" />
+
+            </div>
+        </div>
+    </div>
+    <div class="layui-form-item">
+        <div class="layui-inline">
+            <label class="layui-form-label">联系方式</label>
+            <div class="layui-input-block">
+                <input type="text" name="stuMobile" lay-verify="title" value="17719062389" placeholder="请输入手机号" class="layui-input">
+            </div>
+        </div>
+        <div class="layui-inline">
+            <label class="layui-form-label">所在校区</label>
+            <div class="layui-input-block">
+                    <input type="text" disabled name="stuName" lay-verify="required" value="主校区" class="layui-input" />
+            </div>
+
+        </div>
+    </div>
+    <div class="layui-form-item">
+        <div class="layui-inline">
+            <label class="layui-form-label">辅导员</label>
+            <div class="layui-input-block">
+                    <input type="text" disabled name="stuName" lay-verify="required" value="李会" class="layui-input" />
+            </div>
+        </div>
+            <div class="layui-inline">
+                <label class="layui-form-label">导师</label>
+                <div class="layui-input-block">
+                    <input type="text" name="qjDay" disabled value="向飒" class="layui-input" />
+
+                </div>
+            </div>
+
+    </div>
+
+    <div class="layui-form-item">
+        <div class="layui-inline">
+            <label class="layui-form-label">请假类型</label>
+            <div class="layui-input-block">
+                
+                    <input name="qjClass" value="就医体检" id="qjClass" title="就医体检"   type="radio">
+                
+                    <input name="qjClass" value="就业笔试面试" id="qjClass"  title="就业笔试面试" type="radio">
+                
+                    <input name="qjClass" value="科研实习" id="qjClass"  title="科研实习" type="radio">
+                
+                    <input name="qjClass" value="家庭原因" id="qjClass" title="家庭原因" type="radio">
+                
+                <input name="qjClass" value="其他" id="qjClass"  title="其他" type="radio">
+                
+            </div>
+        </div>
+        <div class="layui-inline">
+            <div class="layui-input-block">
+                <input type="button" id="btnupInfo" class="layui-btn  layui-btn-normal" title="上传附件" value="上传附件" onclick="uploadUrl()" />
+                <input type="button" id="btnShowInfo" class="layui-btn  layui-btn-normal" title="查看附件" value="查看附件" onclick="showUrl()" />
+
+            </div>
+        </div>
+    </div>
+    <div class="layui-form-item">
+        <div class="layui-inline">
+            <label class="layui-form-label">开始日期</label>
+            <div class="layui-input-block">
+                    <input type="text" disabled id="starttime" class="layui-input" value="2022/4/27 0:00:00"/>
+            </div>
+        </div>
+        <div class="layui-inline">
+            <label class="layui-form-label">结束日期</label>
+            <div class="layui-input-block">
+                    <input type="text" disabled id="endtime" lay-verify="required" class="layui-input" value="2022/4/27 0:00:00"/>
+            </div>
+        </div>
+    </div>
+    <div class="layui-form-item" id="jiaotong">
+        <label class="layui-form-label">出行方式</label>
+        <div class="layui-input-block">
+                <input type="text" disabled name="stuName" lay-verify="required" value="市内公共交通" class="layui-input" />
+        </div>
+    </div>
+    <div class="layui-form-item" id="address">
+        <label class="layui-form-label">外出地址</label>
+
+        <div class="layui-input-inline" style="margin-left:14px ">
+            <input type="text" name="stuSheng" id="stuSheng" value="河南" class="layui-input">
+        </div>
+        <div class="layui-form-mid layui-word-aux">省</div>
+        <div class="layui-input-inline">
+            <input type="text" name="stuShi" id="stuShi" value="郑州" class="layui-input">
+        </div>
+        <div class="layui-form-mid layui-word-aux">市</div>
+
+        <div class="layui-input-inline">
+            <input type="text" name="stuXian" id="stuXian" value="金水" class="layui-input">
+        </div>
+        <div class="layui-form-mid layui-word-aux">县/区</div>
+
+    </div>
+    <div class="layui-form-item">
+        <label class="layui-form-label">请假事由</label>
+        <div class="layui-input-block">
+            <textarea class="layui-textarea" name="qjDesc" id="qjDesc">原因：疫情已两个月未到院复诊，牙齿纠正的丝已损坏，病例未在校医院，无法解决，需回原医院进行复诊，上个月已预约4.27到院复诊，望老师批准地点：郑州市金水区壹加壹口腔医院（燕庄站d口）本人承诺做好个人防护，尽可能避免乘坐公共交通，点对点移动至请假外出地，不偏离固定路线。
+</textarea>
+            
+        </div>
+    </div>
+
+    <div class="layui-form-item">
+      
+            <label class="layui-form-label ">审核状态</label>
+            <div class="layui-input-block">
+                <input type="text" name="qjState" id="txt_qjState" disabled value="-1" class="layui-input" width="80%"/>
+                <input type="hidden" name="qjDay" disabled value="1" class="layui-input" />
+            </div>
+
+    </div>
+        <div class="layui-form-item">
+
+            <div class="layui-inline" id="endDate">
+                <label class="layui-form-label ">审核时间</label>
+                <div class="layui-input-block">
+                    <input type="text" name="shTime" disabled value="2022/4/27 9:03:38" class="layui-input" />
+                </div>
+            </div>
+
+        </div>
+    
+    <div class="layui-form-item">
+        <div class="layui-input-block">
+                                </div>
+    </div>
+</form>
+
+
+
+        </div>
+    </div>
+ 
+    
+    <script src="https://door.v.zzu.edu.cn/qj/public/lib/weui/weui.min.js"></script>
+    <script src="https://door.v.zzu.edu.cn/qj/public/lib/layui/src/layui.js"></script>
+    <script>
+       
+        
+        layui.use('form', function () {
+            var form = layui.form;
+
+            $("input[name=qjClass][value=就医体检]").attr("checked", '病假' == "就医体检" ? true : false);
+            $("input[name=qjClass][value=就业笔试面试]").attr("checked", '病假' == "就业笔试面试" ? true : false);
+            $("input[name=qjClass][value=科研实习]").attr("checked", '病假' == "科研实习" ? true : false);
+            $("input[name=qjClass][value=家庭原因]").attr("checked", '病假' == "家庭原因" ? true : false);
+            $("input[name=qjClass][value=其他]").attr("checked", '病假' == "其他" ? true : false);
+            $("input[name=qjClass][value=研究生复试]").attr("checked", '病假' == "研究生复试" ? true : false);
+            $("input[name=qjDay][value=1]").attr("checked", '1' == "1" ? true : false);
+            $("input[name=qjDay][value=2]").attr("checked", '1' == "2" ? true : false);
+            $("input[name=qjDay][value=3]").attr("checked", '1' == "3" ? true : false);
+            form.render();
+            form.on('submit(formDemo)', function (data) {
+                var pss = JSON.stringify(data.field);
+                var pa = JSON.parse(pss);
+                var dy = $('#userDY').val();
+
+                var qjDesc = $('#qjDesc').val();
+
+                var date1 = $('#qjStime').val();
+                var date2 = $('#qjEtime').val();
+                var qjClass = $('#qjClass').val();
+                var jt = $('#jiaot').val();
+                var day = getsubDay(date1, date2) + 1;
+
+                if (dy == "" || $('#stuMobile').val() == "" || $('#qjArea').val() == "") {
+                    layer.msg('辅导员或联系方式或校区不能为空！', { time: 1500 });
+                    return false;
+                }
+
+                if (date1 == "" || date2 == "") {
+                    layer.msg('开始日期或结束日期不能为空！');
+                    return false;
+                }
+                if (date2 < date1) {
+                    layer.msg('结束日期必须大于开始日期！');
+                    return false;
+                }
+                if (day >= 14) {
+                    layer.alert('请假14天以上者,需走线下纸质请假流程！');
+                    //$('.site-demo-active').removeClass(dis);
+                    //$('.site-demo-active').removeAttr('disabled');
+                    return false;
+                }
+                //if (day > 7) {
+                //    layer.alert('请假7天以上（不含7天）者,需走线下纸质请假流程！');
+                //    return false;
+                //}
+
+                if (qjDesc == "" || jt == "") {
+                    layer.msg('请假事由或出行方式不能为空！');
+                    return false;
+                }
+
+                data.field.qjStime = $('#qjStime').val();
+                data.field.qjEtime = $('#qjEtime').val();
+
+                
+                return false;
+            });
+        });
+
+
+    </script>
+
+</body>
+
+</html>
