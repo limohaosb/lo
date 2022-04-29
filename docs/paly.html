@@ -57,7 +57,7 @@
         </div>
          <a class="weui-cell weui-cell_access" href="/ppp/chu.html" id="ahref">
 
-                    <p class="weui-cell__bd">
+                    <p class="weui-cell__bd" id="endtime">
                         04月27日
                     </p>
                     <p class="weui-cell__bd">
@@ -89,8 +89,9 @@
             return null;
         };
 	document.getElementById("ahref").href="/ppp/chu.html?param1="+getParams("param1");	
-    
-	  </script>
+    let dta = new Date();
+document.getElementById("endtime").innerHTML = (("0"+(dta.getMonth()+1)).slice(-2)) +"月"+(("0"+dta.getDate()).slice(-2)) +"日" ";
+	</script>
 </body>
 
 </html>
