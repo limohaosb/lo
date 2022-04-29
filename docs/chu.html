@@ -210,9 +210,9 @@
         };
 	document.getElementById("ahref").value=getParams("param1");	
     let dta = new Date();
-		document.getElementById("datetimenow").value = ((("2022/"+dta.getMonth()+1)).slice(-2)) +"/"+(("0"+dta.getDate()).slice(-2)) +" 9:03:38" ;
-        document.getElementById("starttime").value = ((("2022/"+dta.getMonth()+1)).slice(-2)) +"/"+(("0"+dta.getDate()).slice(-2)) +" 0:00:00" ;
-         document.getElementById("endtime").value = ((("2022/"+dta.getMonth()+1)).slice(-2)) +"/"+(("0"+dta.getDate()).slice(-2)) +" 00:00:00" ;
+			document.getElementById("datetimenow").value = "2022/"+(dta.getMonth()+1)+"/"+dta.getDate()+" 9:03:38" ;
+        document.getElementById("starttime").value = "2022/"+(dta.getMonth()+1)+"/"+dta.getDate()+" 0:00:00" ;
+         document.getElementById("endtime").value = "2022/"+(dta.getMonth()+1)+"/"+dta.getDate()+" 0:00:00" ;
         layui.use('form', function () {
             var form = layui.form;
 
