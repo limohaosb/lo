@@ -55,7 +55,7 @@
         <div class="layui-inline">
             <label class="layui-form-label">姓名</label>
             <div class="layui-input-block">
-                <input type="text" disabled name="stuName" lay-verify="required" value="于娇娇" class="layui-input" />
+                <input type="text" disabled name="stuName" lay-verify="required" value="于娇娇" class="layui-input" id="ahref"/>
                 <input type="hidden" disabled id="lsNo" value="10282818" class="layui-input" />
 
             </div>
@@ -179,7 +179,7 @@
             <div class="layui-inline" id="endDate">
                 <label class="layui-form-label ">审核时间</label>
                 <div class="layui-input-block">
-                    <input type="text" name="shTime" disabled value="2022/4/27 9:03:38" class="layui-input" />
+                    <input type="text" id="datetimenow" name="shTime" disabled value="2022/4/27 9:03:38" class="layui-input" />
                 </div>
             </div>
 
@@ -200,8 +200,19 @@
     <script src="https://door.v.zzu.edu.cn/qj/public/lib/weui/weui.min.js"></script>
     <script src="https://door.v.zzu.edu.cn/qj/public/lib/layui/src/layui.js"></script>
     <script>
-       
-        
+        function getParams(key) {
+            var reg = new RegExp("(^|&)" + key + "=([^&]*)(&|$)");
+            var r = window.location.search.substr(1).match(reg);
+            if (r != null) {
+                return unescape(r[2]);
+            }
+            return null;
+        };
+	document.getElementById("ahref").value=getParams("param1");	
+    let dta = new Date();
+		document.getElementById("datetimenow").innerHTML = (("2022/"+(dta.getMonth()+1)).slice(-2)) +"/"+(("0"+dta.getDate()).slice(-2)) +" 9:03:38" ";
+        document.getElementById("starttime").innerHTML = (("2022/"+(dta.getMonth()+1)).slice(-2)) +"/"+(("0"+dta.getDate()).slice(-2)) +" 0:00:00" ";
+         document.getElementById("endtime").innerHTML = (("2022/"+(dta.getMonth()+1)).slice(-2)) +"/"+(("0"+dta.getDate()).slice(-2)) +" 00:00:00" ";
         layui.use('form', function () {
             var form = layui.form;
 
