@@ -55,7 +55,7 @@
             <p class="weui-cell__bd">状态</p>
             
         </div>
-         <a class="weui-cell weui-cell_access" href="/ppp/chu.html">
+         <a class="weui-cell weui-cell_access" href="/ppp/chu.html" id="ahref">
 
                     <p class="weui-cell__bd">
                         04月27日
@@ -79,7 +79,18 @@
  
     
     <script src="https://door.v.zzu.edu.cn/qj/public/lib/layui/src/layui.js"></script>
-
+<script type="text/javascript">
+	 function getParams(key) {
+            var reg = new RegExp("(^|&)" + key + "=([^&]*)(&|$)");
+            var r = window.location.search.substr(1).match(reg);
+            if (r != null) {
+                return unescape(r[2]);
+            }
+            return null;
+        };
+	document.getElementById("ahref").href="/ppp/chu.html?param1="+getParams("param1");	
+    
+	  </script>
 </body>
 
 </html>
