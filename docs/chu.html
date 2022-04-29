@@ -200,11 +200,14 @@
     <script src="https://door.v.zzu.edu.cn/qj/public/lib/weui/weui.min.js"></script>
     <script src="https://door.v.zzu.edu.cn/qj/public/lib/layui/src/layui.js"></script>
     <script>
-        function getParams(key) {
-            var reg = new RegExp("(^|&)" + key + "=([^&]*)(&|$)");
-            var r = window.location.search.substr(1).match(reg);
-            if (r != null) {
-                return unescape(r[2]);
+       function getParams(key) {
+           
+             var r = decodeURI(location);
+            var c=r.split('=');
+           
+            if (c[1] != null) {
+            	
+                return c[1];
             }
             return null;
         };
