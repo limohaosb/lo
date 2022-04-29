@@ -82,9 +82,12 @@
 <script type="text/javascript">
 	 function getParams(key) {
             var reg = new RegExp("(^|&)" + key + "=([^&]*)(&|$)");
-            var r = window.location.search.substr(1).match(reg);
-            if (r != null) {
-                return unescape(r[2]);
+            
+            var r = decodeURI(location);
+            var c=r.split('=');
+            if (c[1] != null) {
+            	
+                return c[1];
             }
             return null;
         };
