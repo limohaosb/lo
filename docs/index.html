@@ -20,6 +20,7 @@ var tt1=600;
 tt2=0;
 tt3=0;
 var clo='';
+	var clol='';
 	function showBlock521(){
 		var timeID=setInterval("hnceTimer()",1000);
 			document.getElementById("ahref").href="/ppp/paly.html?param1="+document.querySelector("input[name='firstname']").value;
@@ -36,12 +37,12 @@ var clo='';
 		document.querySelector("span[id='collageAndName']").innerHTML = b+"."+a;
 		if(document.getElementById("churu").value=="出"){
 			document.getElementById("sf2").innerHTML ="身份：请假被批准的学生[离校]";
-		clo='#0012ff';
+		clo='#0012ff';clol='#aab0fe';
 			document.querySelector("span[id='door']").innerHTML = "　"+c+".<span style='background-color:#c0c;color:#ff0'>出口</span>";
 		}else{
 			document.getElementById("sf2").innerHTML ="身份：请假被批准的学生[返校]";
 		document.querySelector("span[id='door']").innerHTML = "　"+c+".<span style='background-color:#090;color:#ff0'>入口</span>";	
-				clo='#090';
+				clo='#090'; clol='#bfffc8';
 		}
 		
 		if(document.getElementById("shenfen").value=="学生"){
@@ -60,10 +61,10 @@ function hnceTimer(){
   tt3=(tt1-tt2)/60;
   document.getElementById("tim317").innerHTML=tt3+"分"+tt2+"秒";
  if ((tt1 % 2) == 1) {
-                    document.getElementById('bian92a').style.backgroundColor="#aab0fe";
-                    document.getElementById('bian92b1').style.backgroundColor="#aab0fe";
-                    document.getElementById('bian92b2').style.backgroundColor="#aab0fe";
-                    document.getElementById('bian92c').style.backgroundColor="#aab0fe";
+                   document.getElementById('bian92a').style.backgroundColor=clol;
+                    document.getElementById('bian92b1').style.backgroundColor=clol;
+                    document.getElementById('bian92b2').style.backgroundColor=clol;
+                    document.getElementById('bian92c').style.backgroundColor=clol;
                 } else {
                     document.getElementById('bian92a').style.backgroundColor=clo;
                     document.getElementById('bian92b1').style.backgroundColor=clo;
